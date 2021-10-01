@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Page about Java Script</title>
+     
+ </head>
+<body>
+ <header>
+     <h1>Pass phrase by Hema Sesha Sai Pamulapati</h1>
+ </header>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for ="pwd">Enter the secret phrase</label>
+    <input type="password" id="pwd" name="pwd" value="Let me in" >
+    <label for ="texttype">Enter a phrase</label>
+    <input type="text" id="texttype" name="texttype">
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+
+
+<div id="result">This is our results </div>
+
+<script> 
+let correct=0;
+let wrong=0;
+function processPhrase()
+{
+    console.log("Getting values of check &secret phrase")
+    cct=document.getElementById("pwd").value
+    rct=document.getElementById("texttype").value
+    out = document.getElementById("result")
+    if(cct==rct)
+    {
+        correct=correct+1
+        alert("Access Allowed")
+    }
+    else{
+        wrong=wrong+1
+        alert("Access Denied")
+    }
+    out.innerHTML="Correct count = "+correct+" Wrong count = "+wrong
+}
+</script>
+
+
+</body>
+</html> 
