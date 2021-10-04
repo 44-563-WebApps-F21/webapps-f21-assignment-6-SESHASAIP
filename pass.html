@@ -21,10 +21,15 @@
 
 
 <div id="result">This is our results </div>
+<div class="container">
+    <img id="swit"src="pecock.jpg" alt= pic of tiger width="200" height="200" onclick="newImage()">
+    
+</div>
 
 <script> 
 let correct=0;
 let wrong=0;
+let usingImage=1;
 function processPhrase()
 {
     console.log("Getting values of check &secret phrase")
@@ -42,7 +47,37 @@ function processPhrase()
     }
     out.innerHTML="Correct count = "+correct+" Wrong count = "+wrong
 }
+function newImage()
+{
+    switch(usingImage)
+    {
+        case 1:
+            { 
+                
+                document.getElementById("swit").src="Tiger.jpg"
+                usingImage=2
+                alert("1st guess")
+            break
+            }
+        case 2:
+            {
+                
+                document.getElementById("swit").src="pecock.jpg"
+                usingImage=3
+                alert("2nd guess")
+          break
+        }
+        case 3:
+            { 
+                
+                document.getElementById("swit").src="Elephant.jpg"
+                alert("3rd guess")
+            break
+            } 
+    }
+}
 </script>
+
 
 
 </body>
