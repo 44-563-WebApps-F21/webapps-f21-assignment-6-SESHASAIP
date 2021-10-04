@@ -26,14 +26,31 @@
 
 
 </form>
+<form>
+    <label for="1st">+</label>
+    <input type="radio" id="1st"
+     value="plus" name="all">
+    <label for="2nd">-</label >
+    <input type="radio" id="2nd" 
+    value="minus" name="all" >
+    <label for="3rd">*</label>
+    <input type="radio" id="3rd" 
+    value="times" name="all">
+    <label for="4th">/</label>
+    <input type="radio" id="4th" 
+    value="divide" name="all" >
+    <br>
+    <input type="button" onclick="processRadio()" value="arthamatic">
+    
+</form>
+
+    
 
 
 
 <br>
 <hr>
-<div id="result">This text will be replaced </div>
-<hr>
-<p id="output">Computed value </p>
+<p id="output">Output will change </p>
 
 <script> 
 
@@ -43,7 +60,7 @@
         nick = document.getElementById("form1_nick").value
         confirmed = confirm("Are these the values? "+age+" and "+nick)
         
-        out = document.getElementById("result")
+        out = document.getElementById("output")
         if(confirmed){
             out.innerHTML = "Values were confirmed"
         } else {
@@ -62,6 +79,33 @@
         }
 
         output.innerHTML=res
+    }
+    function processRadio()
+    {
+        
+        var a=document.getElementById("initial").value
+        var b=document.getElementById("expo ele").value
+        let er=document.getElementById("1st").checked
+        let ef=document.getElementById("2nd").checked
+        let eg=document.getElementById("3rd").checked
+        let ei=document.getElementById("4th").checked
+        confirmed=confirm("Are these the values? "+er+" and "+ef+" and "+eg+" and "+ei)
+        let out=document.getElementById("output")
+        if(document.getElementById("1st").checked)
+        {
+           out.innerHTML=(Number)(a)+(Number)(b)
+        }
+        else if (ef) {
+            out.innerHTML=a-b
+            
+        } else if(eg) {
+            out.innerHTML=a*b
+        }
+        else{
+            out.innerHTML=a/b
+        }
+
+
     }
     </script>
 
