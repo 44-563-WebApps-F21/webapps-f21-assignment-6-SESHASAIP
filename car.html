@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>checkboxes using javascript</title>
+     <h1>orders a car by Hema Sesha Sai Pamulapati</h1>
+ </head>
+
+
+<body>
+
+    <form>
+        <div>
+            <label for="cc1">electric </label>
+            <input type="checkbox" id="cc1" name="electric" value=electric> <br>
+
+            <label for="cc2">ac </label>
+            <input type="checkbox" id="cc2" name="ac" value=ac> <br>
+
+            <label for="cc3">gps</label>
+            <input type="checkbox" id="cc3" name="gps" value="gps"> <br>
+
+            <input type="button" onclick="orderCar()" value="Order a car">
+        </div>
+</form>
+<form>
+    <input type="text" id="ccc1" name="propertey" value="color">
+    <label for="ccc1" >Enter a propertey</label><br>
+    <input type="text" id="ccc2" name="color" >
+    <label for="ccc2">Enter a value</label><br>
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form>
+
+
+
+
+<p id="result">This text will be replaced </p>
+<p id="res">properties text</p>
+
+<script> 
+ var my_car;
+        function orderCar() {
+
+            my_car = "";
+
+            ele = document.getElementById("cc1").checked
+            a= document.getElementById("cc2").checked
+            g= document.getElementById("cc3").checked
+            my_car = "electric : " + ele + "  "+"ac:  " + a +" " +"gps:  " + g;
+
+            out = document.getElementById("result")
+
+            out.innerHTML = my_car
+        }
+        function updateCar()
+        {
+            my_car="";
+            pro=document.getElementById("ccc1").value
+            val=document.getElementById("ccc2").value
+            my_car=pro+" : "+val
+            out=document.getElementById("res")
+            out.innerHTML=my_car
+
+        }
+    </script>
+
+</body>
+</html> 
